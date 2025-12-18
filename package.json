@@ -1,0 +1,16 @@
+{
+  "name": "hash-calc",
+  "version": "1.0.0",
+  "description": "",
+  "license": "ISC",
+  "author": "",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "@ethersphere/bee-js": "^10.1.1",
+    "@fairdatasociety/bmt-js": "^2.1.0"
+  }
+}
