@@ -17,15 +17,11 @@ npm install
 
 ## Usage
 
+Calculate hash for default text ("hello world"):
+
 ```bash
 node index.js
 ```
-
-The script calculates the BMT hash for the text "hello world" and displays:
-
-- The hash value (64-character hex string)
-- Data length and bytes
-- Chunk information (span, payload, padding)
 
 ```
 Testing with text: hello world
@@ -51,6 +47,49 @@ Chunk payload length: 11 bytes
 
 ✓ BMT hash calculated successfully
 ```
+
+Calculate hash for a file:
+
+```bash
+node index.js <filename>
+```
+
+Example:
+
+```bash
+node index.js bee.jpg
+```
+
+```
+Testing with file: bee.jpg
+Data length: 78639 bytes
+
+=== Method 1: bee-js (upload to Bee node) ===
+Bee hash: c988471a6c4aab24818509c16d4e7cf9a7c92ab86c59bb3218083f2a88a18e47
+Length: 64 chars
+
+=== Method 2: bmt-js (local calculation) ===
+BMT hash: c988471a6c4aab24818509c16d4e7cf9a7c92ab86c59bb3218083f2a88a18e47
+Length: 64 chars
+
+=== Additional Information ===
+Multi-chunk file
+Number of chunks: 0
+Total data size: 78639 bytes
+
+✓ BMT hash calculated successfully
+```
+
+### Output
+
+The script displays:
+
+- Data source (text or file) and size
+- Hash from bee-js (if Bee node is running)
+- Hash from bmt-js (local calculation)
+- Additional information:
+  - Single chunk files (≤ 4KB): chunk details, span, payload
+  - Multi-chunk files (> 4KB): number of chunks, total size
 
 ## Dependencies
 
